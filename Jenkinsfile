@@ -11,14 +11,14 @@ pipeline {
     stages {
         stage('Build docker image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE} ."
+                sh "docker build -t ${IMAGE_NAME} ."
             }
         }
         
         stage('Run container') {
             steps {
                 sh "docker rm -f ${CONTAINER_NAME} || true"
-                sh "docker run --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
+                sh "docker run --name ${CONTAINER_NAME} ${IMAGE_NAME}"
             }
         }
         stage('Push to Dockerhub') {
