@@ -2,8 +2,10 @@ pipeline {
     agent any
     
     environment{
+      DOCKER_USER = 'tanmayeedhakate'
       DOCKER_IMAGE = 'java-hello-world:latest'
       CONTAINER_NAME = 'java-hello-running'
+      DOCKER_CREDS_ID = 'tanmayeedhakate'
     }
     
     stages {
