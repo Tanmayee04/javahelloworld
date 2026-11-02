@@ -3,8 +3,8 @@ pipeline {
     
     environment{
       DOCKER_USER = 'tanmayeedhakate'
-      DOCKER_IMAGE = 'java-hello-world:latest'
-      CONTAINER_NAME = 'java-hello-running'
+      DOCKER_IMAGE = 'java-hello-world-v2'
+      CONTAINER_NAME = 'java-hello-running-v2'
       DOCKER_CREDS_ID = 'tanmayeedhakate'
     }
     
