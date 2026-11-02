@@ -30,6 +30,13 @@ pipeline {
                 }
             }
         }
+        stage('K8S Pod deployment') {
+            steps {
+                sh "kubectl apply -f deployment.yaml"
+                sh "kubectl rollout restart deployment/java-hello-depl"
+                sh "kubectl get pods"
+            }
+        }
     }
 }
 
