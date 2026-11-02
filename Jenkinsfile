@@ -2,15 +2,15 @@ pipeline {
     agent any
     
     stages {
-        stage('Compile') {
+        stage('Build docker image') {
             steps {
-                sh 'javac hello.java'
+                sh 'docker build -t java-hello-world:latest'
             }
         }
         
-        stage('Execute & Verify') {
+        stage('Run container') {
             steps {
-                sh 'java hello'
+                sh 'docker run --name java-hello-running java-hello-world:latest'
             }
         }
     }
