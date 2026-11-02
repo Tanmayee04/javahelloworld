@@ -15,7 +15,7 @@ pipeline {
         
         stage('Run container') {
             steps {
-                sh 'docker run --name ${CONTAINER_NAME} ${DOCKER_IAMGE}'
+                sh 'docker run --name ${CONTAINER_NAME} ${DOCKER_IMAGE}'
             }
         }
     }
