@@ -9,4 +9,6 @@ pipeline {
     stage('Execute & Verify') {
       steps {
         sh 'java hello'
+      }
+    }
 }
